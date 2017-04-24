@@ -1,4 +1,5 @@
 const path = require('path');
+var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 module.exports = {
     entry: './src/App.jsx',
@@ -33,6 +34,9 @@ module.exports = {
     },
 
     devtool: 'cheap-eval-source-map',
+    plugins: [
+        new OpenBrowserPlugin({ url: 'http://localhost:8080' })
+    ],
     
     resolve: {
         extensions: ['.js', '.jsx', '.json', '*']
